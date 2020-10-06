@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service_interface>
+
+    <action name="MakeCall">
+    <parameters>
+        <parameter predicate="person_to_call" format="value"/>
+        <parameter predicate="number_type_to_call" format="value"/>
+    </parameters>
+    <failure_reasons/>
+    <target>
+        <http endpoint="http://http-service/make_call"/>
+    </target>
+    </action>
+
+</service_interface>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<domain name="CallJohnDomain" is_super_domain="true">
+
+  <goal type="perform" action="top">
+    <plan>
+      <forget_all/>
+      <findout type="goal"/>
+    </plan>
+  </goal>
+
+  <goal type="perform" action="make_call" reraise_on_resume="true">
+    <plan>
+    <findout type="wh_question" predicate="person_to_call"/>
+    <findout type="wh_question" predicate="number_type_to_call"/> 
+    <invoke_service_action name="MakeCall" postconfirm="true"/>
+    </plan>
+  </goal>
+</domain>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar>
+    <action name="top">
+        <one-of>
+        <item>main menu</item>
+        <item>top</item>
+        <item>beginning</item>
+        <item>cancel</item>
+        <item>forget it</item>
+        <item>never mind</item>
+        <item>abort</item>
+        </one-of>
+    </action>
+
+    <action name="up">
+        <one-of>
+        <item>up</item>
+        <item>back</item>
+        <item>go back</item>
+        </one-of>
+    </action>
+
+    <action name="make_call">
+        <one-of>
+        <item>make a call</item>
+        <item>make call</item>
+        <item>i would like to call someone</item>
+        <item>call <slot predicate="person_to_call" type="individual"/></item>
+        </one-of>
+    </action>
+
+    <individual name="contact_john">
+        <one-of>
+            <item>john</item>
+            <item>john's</item>
+        </one-of>
+    </individual>
+
+    <individual name="contact_mary">
+        <one-of>
+            <item>mary</item>
+            <item>mary's</item>
+        </one-of>
+    </individual>
+
+    <individual name="contact_lisa">
+        <one-of>
+            <item>lisa</item>
+            <item>lisa's</item>
+        </one-of>
+    </individual>
+
+    <individual name="contact_andy">
+        <one-of>
+            <item>andy</item>
+            <item>andy's</item>
+        </one-of>
+    </individual>
+
+
+    <individual name="mobile">
+        <one-of>
+            <item>mobile</item>
+            <item>cellphone</item>
+        </one-of>
+    </individual>
+
+    <individual name="home">
+        <one-of>
+            <item>home</item>
+            <item>house</item>
+        </one-of>
+    </individual>
+
+    <individual name="work">
+        <one-of>
+            <item>work</item>
+            <item>office</item>
+            <item>job</item>
+        </one-of>
+    </individual>
+
+    <question speaker="system" type="goal">What would you like to do?</question>
+
+    <question speaker="system" predicate="person_to_call" type="wh_question">Which contact</question>
+
+    <question speaker="system" predicate="number_type_to_call" type="wh_question">Which phone</question>
+
+    <report action="MakeCall" status="ended">Calling <slot predicate="person_to_call"/>'s <slot predicate="number_type_to_call"/></report>
+
+</grammar>

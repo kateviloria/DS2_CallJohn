@@ -13,10 +13,12 @@
     <individual name="contact_andy" sort="contact"/>
 
     <predicate name="number_type_to_call" sort="number_type"/>
-    
+
     <sort name="number_type"/>
     <individual name="mobile" sort="number_type"/>
     <individual name="home" sort="number_type"/>
     <individual name="work" sort="number_type"/>
 
+    <predicate name="number_of_contact" sort="string"/>
+    
 </ontology>

@@ -14,20 +14,20 @@ def jsonfilter(value):
 
 environment.filters["json"] = jsonfilter
 
-#with open('call_john/contacts.json', "r") as json_file:
-#    CONTACTS = json.load(json_file)
+with open('call_john/contacts.json', "r") as json_file:
+    CONTACTS = json.load(json_file)
 
-#CONTACTS["contact_john"]["mobile"] = "0701234567"
-#CONTACTS["contact_john"]["work"] = "0736582934"
-#CONTACTS["contact_john"]["home"] = "031122363"
+CONTACTS["contact_john"]["mobile"] = "0701234567"
+CONTACTS["contact_john"]["work"] = "0736582934"
+CONTACTS["contact_john"]["home"] = "031122363"
 
-#CONTACTS["contact_lisa"]["mobile"] = "0709876543"
-#CONTACTS["contact_lisa"]["work"] = "0763559230"
-#CONTACTS["contact_lisa"]["home"] = "031749205"
+CONTACTS["contact_lisa"]["mobile"] = "0709876543"
+CONTACTS["contact_lisa"]["work"] = "0763559230"
+CONTACTS["contact_lisa"]["home"] = "031749205"
 
-#CONTACTS["contact_mary"]["mobile"] = "0706574839"
-#CONTACTS["contact_mary"]["work"] = "0784736475"
-#CONTACTS["contact_mary"]["home"] = "031847528"
+CONTACTS["contact_mary"]["mobile"] = "0706574839"
+CONTACTS["contact_mary"]["work"] = "0784736475"
+CONTACTS["contact_mary"]["home"] = "031847528"
 
 # CONTACTS["contact_andy"]["mobile"] = None 
 
@@ -146,12 +146,12 @@ def action_success_response():
 def make_call():
     payload = request.get_json()
 
-    with open('call_john/contacts.json', "r") as json_file:
-      CONTACTS = json.load(json_file)
+    #with open('call_john/contacts.json', "r") as json_file:
+    #  CONTACTS = json.load(json_file)
 
     person_to_call = payload["context"]["facts"]["person_to_call"]["value"]
     number_type_to_call = payload["context"]["facts"]["number_type_to_call"]["value"]
     
-    #contact_number = CONTACTS["person_to_call"]["number_type_to_call"]
+    contact_number = CONTACTS[person_to_call][number_type_to_call]
 
     return action_success_response()

@@ -8,11 +8,20 @@
     </plan>
   </goal>
 
-  <goal type="perform" action="make_call">
+  <goal type="perform" action="make_call" reraise_on_resume="true">
     <plan>
     <findout type="wh_question" predicate="person_to_call"/>
     <findout type="wh_question" predicate="number_type_to_call"/> 
-    <invoke_service_action name="MakeCall" postconfirm="true"/>
+      <invoke_service_action name="MakeCall" postconfirm="true"/>
+    </plan>
+  </goal>
+
+  <goal type="resolve" predicate="number_of_contact" question_type="wh_question">
+    <plan>
+      <findout type="wh_question" predicate="person_to_call"/>
+      <findout type="wh_question" predicate="number_type_to_call"/>    
+        <invoke_service_query type="wh_question" predicate="number_of_contact"/>
+          <forget predicate="number_type_to_call"/>
     </plan>
   </goal>
 

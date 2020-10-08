@@ -34,6 +34,7 @@
 
     <individual name="contact_john">
         <one-of>
+            <item>John</item>
             <item>john</item>
             <item>john's</item>
             <item>John's</item>
@@ -42,6 +43,7 @@
 
     <individual name="contact_mary">
         <one-of>
+            <item>Mary</item>
             <item>mary</item>
             <item>mary's</item>
             <item>Mary's</item>
@@ -109,8 +111,6 @@
         </one-of>
     </question>
 
-
-    <question type="wh_question" speaker="all" predicate="number_of_contact" >I want to know a contact's phone number</question>
 
     <question type="wh_question" speaker="all" predicate="number_of_contact">number of contact</question>
 

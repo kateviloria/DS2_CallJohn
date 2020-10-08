@@ -111,7 +111,13 @@
         </one-of>
     </question>
 
+    <question type="wh_question" speaker="all" predicate="number_of_contact">
+        <one-of>
+            <item>the contact's phone number</item>
+             <item>number of contact</item>
+        </one-of>
+    </question>
 
-    <question type="wh_question" speaker="all" predicate="number_of_contact">number of contact</question>
+    <question type="wh_question" speaker="all" predicate="number_of_contact" >I want to know a contact's phone number</question>
 
 </grammar>

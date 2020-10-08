@@ -96,10 +96,11 @@
 
     <report action="MakeCall" status="ended">Calling <slot predicate="person_to_call"/>'s <slot predicate="number_type_to_call"/></report>
 
-    <answer speaker="system" predicate="contact_number"> It's <slot predicate="contact_number"/></answer>
+    <answer speaker="system" predicate="number_of_contact"> It's <slot predicate="number_of_contact"/></answer>
 
     <question type="wh_question" predicate="number_of_contact" speaker="user">
         <one-of>
+            <item>What is <slot predicate="person_to_call" type="individual"/><slot predicate="number_type_to_call" type="individual"/></item>
             <item>I want to know a contact's phone number</item>
             <item>I want to know a contact's number</item>
             <item>I want to know the contact's phone number</item>

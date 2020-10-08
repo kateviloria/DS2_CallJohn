@@ -155,3 +155,15 @@ def make_call():
     contact_number = CONTACTS[person_to_call][number_type_to_call]
 
     return action_success_response()
+    
+
+@app.route("/number_of_contact", methods=['POST'])
+def number_of_contact():
+    payload = request.get_json()
+
+    person_to_call = payload["context"]["facts"]["person_to_call"]["value"]
+    number_type_to_call = payload["context"]["facts"]["number_type_to_call"]["value"]
+
+    contact_number = CONTACTS[person_to_call][number_type_to_call]
+
+    return query_response(value=contact_number, grammar_entry=None) 

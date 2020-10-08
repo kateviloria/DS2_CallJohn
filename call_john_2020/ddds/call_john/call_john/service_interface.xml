@@ -12,12 +12,6 @@
         </target>
     </action>
 
-    <entity_recognizer name="BasicActionRecognizer">
-        <target>
-            <http endpoint="http://http-service/contact_recognizer"/>
-        </target>
-    </entity_recognizer> 
-
     <query name="number_of_contact">
         <parameters>
             <parameter predicate="person_to_call" format="value"/>
